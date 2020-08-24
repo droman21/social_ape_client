@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
 //Site Pages
 import home from './pages/home';
@@ -11,11 +13,26 @@ import signup from './pages/signup';
 import Navbar from './components/NavBar';
 
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#7b1fa2',
+    },
+    secondary: {
+      main: '#ef6c00',
+    }
+  },
+  typography: {
+    useNextVariants: true,
+  },
+});
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <MuiThemeProvider theme={theme}>
+        <div className="App">
         <Router>
         <Navbar />
           <div className="container">
@@ -26,7 +43,8 @@ class App extends Component {
             </Switch>
           </div>
         </Router>
-      </div>
+        </div>
+      </MuiThemeProvider>
     );
   }
 }
