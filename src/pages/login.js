@@ -25,16 +25,22 @@ const styles = {
         height: '80px'
     },
     pageTitle: {
-        margin: '10px auto 10px auto',
+        margin: '10px auto 10px auto'
     },
     textFeild: {
-        margin: '10px auto 10px auto',
+        margin: '10px auto 10px auto'
     },
     button: {
-        marginTop: '20px'
+        marginTop: 20,
+        postion: 'relative'
     },
     customError: {
         color: 'red'
+        fontSize: '0.8em',
+        marginTop: 10
+    },
+    progress: {
+        position: 'absolute'
     }
 };
   
@@ -138,7 +144,7 @@ class login extends Component {
                     </Button>
                     <br />
                     <small>
-                        dont have an account ? sign up <Link to="/signup">here</Link>
+                        Dont Have an Account ? Sign Up <Link to="/signup">Here</Link>
                     </small>
                     </form>
                 </Grid>
